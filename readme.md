@@ -1,7 +1,7 @@
 # uni-time
 
-![test](https://github.com/uladkasach/uni-time/workflows/test/badge.svg)
-![publish](https://github.com/uladkasach/uni-time/workflows/publish/badge.svg)
+![test](https://github.com/ehmpathy/uni-time/workflows/test/badge.svg)
+![publish](https://github.com/ehmpathy/uni-time/workflows/publish/badge.svg)
 
 A glossary of intuitive, universally unambiguous time, date, and duration domain literals.
 
@@ -45,7 +45,7 @@ const occurredAt: UniDateTime;
 ```ts
 const noon: UniTime = isUniTime.assure('12:00:00.000')
 const birthday: UniDate = isUniDate.assure('2013-12-15')
-const occurredAt: UniDateTime = isUniDate.assure('2013-12-15T07:21:13.555Z')
+const occurredAt: UniDateTime = isUniDateTime.assure('2013-12-15T07:21:13.555Z')
 ```
 
 
