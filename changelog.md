@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ehmpathy/uni-time/compare/v1.0.1...v1.1.0) (2024-05-25)
+
+
+### Features
+
+* **type:** expose UniDateTimeRange ([527dd1e](https://github.com/ehmpathy/uni-time/commit/527dd1e75c88494f954cc5e7720931e16451e9eb))
+
 ## [1.0.1](https://github.com/ehmpathy/uni-time/compare/v1.0.0...v1.0.1) (2024-05-25)
 
 
