@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/ehmpathy/uni-time/compare/v1.1.0...v1.2.0) (2024-05-25)
+
+
+### Features
+
+* **checks:** expose isUniDate and isUniDateTime checks with assure ([f6680b6](https://github.com/ehmpathy/uni-time/commit/f6680b60b4a95cf5eef4a854cdad8cd0c1e11fe9))
+
 ## [1.1.0](https://github.com/ehmpathy/uni-time/compare/v1.0.1...v1.1.0) (2024-05-25)
 
 
