@@ -64,3 +64,19 @@ export type UniDateRange = AsOfGlossary<
   'uni-time',
   false // this is not required to have the _dglo annotation, since we care about the structure.shape, and not the structure.origin
 >;
+
+/**
+ * a universally unambiguous datetime range
+ *
+ * note
+ * - since is inclusive (i.e., you've had freedom _since_ you gained it)
+ * - until is exclusive (i.e., you have money _until_ you run out)
+ */
+export type UniDateTimeRange = AsOfGlossary<
+  {
+    since: UniDateTime;
+    until: UniDateTime;
+  },
+  'uni-time',
+  false // this is not required to have the _dglo annotation, since we care about the structure.shape, and not the structure.origin
+>;
