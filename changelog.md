@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ehmpathy/uni-time/compare/v1.2.0...v1.3.0) (2024-05-26)
+
+
+### Features
+
+* **cast:** toMillisecondsSinceEpoch ([c91cd01](https://github.com/ehmpathy/uni-time/commit/c91cd01e116640d9a0a61f306832f369ff1bab1e))
+
 ## [1.2.0](https://github.com/ehmpathy/uni-time/compare/v1.1.0...v1.2.0) (2024-05-25)
 
 
