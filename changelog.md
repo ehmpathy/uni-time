@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/ehmpathy/uni-time/compare/v1.4.1...v1.4.2) (2024-07-21)
+
+
+### Bug Fixes
+
+* **duration:** support weeks as final duration grain ([f99d8ce](https://github.com/ehmpathy/uni-time/commit/f99d8ce9c2cb36ffca16a2c7808315b52e198aaa))
+
 ## [1.4.1](https://github.com/ehmpathy/uni-time/compare/v1.4.0...v1.4.1) (2024-07-21)
 
 
