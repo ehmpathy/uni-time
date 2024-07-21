@@ -2,7 +2,7 @@
   "name": "@ehmpathy/uni-time",
   "author": "ehmpathy",
   "description": "a glossary of universally intuitive time, date, and duration domain literals",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "repository": "ehmpathy/uni-time",
   "homepage": "https://github.com/ehmpathy/uni-time",
   "keywords": [
