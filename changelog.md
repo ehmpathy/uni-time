@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/ehmpathy/uni-time/compare/v1.4.0...v1.4.1) (2024-07-21)
+
+
+### Bug Fixes
+
+* **duration:** handle zero unit durations correctly ([49805d4](https://github.com/ehmpathy/uni-time/commit/49805d412a3f0c79a7d88d2bb3c8e162124637b4))
+
 ## [1.4.0](https://github.com/ehmpathy/uni-time/compare/v1.3.0...v1.4.0) (2024-05-26)
 
 
