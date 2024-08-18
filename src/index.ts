@@ -6,3 +6,4 @@ export * from './checks/isUniDateTime';
 export * from './casts/toMillisecondsSinceEpoch';
 export * from './manipulate/addDuration';
 export * from './manipulate/subDuration';
+export * from './wrappers/waitFor';
