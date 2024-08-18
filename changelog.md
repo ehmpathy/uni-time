@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/ehmpathy/uni-time/compare/v1.4.2...v1.5.0) (2024-08-18)
+
+
+### Features
+
+* **wrappers:** expose waitFor wrapper ([920410c](https://github.com/ehmpathy/uni-time/commit/920410c27fc6872d73aa1660561c750e9c9042c7))
+
 ## [1.4.2](https://github.com/ehmpathy/uni-time/compare/v1.4.1...v1.4.2) (2024-07-21)
 
 
