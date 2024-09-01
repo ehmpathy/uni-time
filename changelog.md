@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/ehmpathy/uni-time/compare/v1.5.0...v1.6.0) (2024-09-01)
+
+
+### Features
+
+* **observe:** expose duration stopwatch ([c70c2ab](https://github.com/ehmpathy/uni-time/commit/c70c2ab1f235c06592d352f7f3153f9c8c64dda2))
+
 ## [1.5.0](https://github.com/ehmpathy/uni-time/compare/v1.4.2...v1.5.0) (2024-08-18)
 
 
