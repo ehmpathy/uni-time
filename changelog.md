@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/ehmpathy/uni-time/compare/v1.6.0...v1.6.1) (2024-09-01)
+
+
+### Bug Fixes
+
+* **practs:** bump practs to latest best ([ddbcff3](https://github.com/ehmpathy/uni-time/commit/ddbcff30e4a3940513b099a277f2f9dd9d042de7))
+
 ## [1.6.0](https://github.com/ehmpathy/uni-time/compare/v1.5.0...v1.6.0) (2024-09-01)
 
 
