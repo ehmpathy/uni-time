@@ -1,10 +1,10 @@
 import { addMilliseconds, parseISO } from 'date-fns';
 import { PickOne } from 'type-fns';
 
+import { UniDate, UniDateTime } from '../../domain/UniDateTime';
+import { UniDuration, toMilliseconds } from '../../domain/UniDuration';
 import { asUniDate, isUniDate } from '../checks/isUniDate';
 import { asUniDateTime } from '../checks/isUniDateTime';
-import { UniDate, UniDateTime } from '../domain/UniDateTime';
-import { UniDuration, toMilliseconds } from '../domain/UniDuration';
 
 /**
  * add a duration to a datetime

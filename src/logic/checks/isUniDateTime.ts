@@ -1,8 +1,8 @@
 import { parseISO } from 'date-fns';
 import { withAssure } from 'type-fns';
 
+import { UniDateTime } from '../../domain/UniDateTime';
 import { castInputToDate } from '../casts/castInputToDate';
-import { UniDateTime } from '../domain/UniDateTime';
 
 /**
  * casts a datetime like input into a uniDateTime

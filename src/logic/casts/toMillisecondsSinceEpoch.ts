@@ -1,4 +1,4 @@
-import { UniDate, UniDateTime } from '../domain/UniDateTime';
+import { UniDate, UniDateTime } from '../../domain/UniDateTime';
 
 export const toMillisecondsSinceEpoch = (
   input: UniDate | UniDateTime,

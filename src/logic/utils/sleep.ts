@@ -1,4 +1,4 @@
-import { UniDuration, toMilliseconds } from '../domain/UniDuration';
+import { UniDuration, toMilliseconds } from '../../domain/UniDuration';
 
 export const sleep = (ms: number | UniDuration): Promise<void> =>
   new Promise((resolve) =>

@@ -1,7 +1,7 @@
 import { HelpfulError } from '@ehmpathy/error-fns';
 import { NotUndefined, isNotUndefined } from 'type-fns';
 
-import { UniDuration, toMilliseconds } from '../domain/UniDuration';
+import { UniDuration, toMilliseconds } from '../../domain/UniDuration';
 import { sleep } from '../utils/sleep';
 
 const DEFAULT_TIMEOUT: UniDuration = { seconds: 60 };

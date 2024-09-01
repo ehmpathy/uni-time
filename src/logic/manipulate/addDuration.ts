@@ -1,10 +1,10 @@
 import { parseISO, subMilliseconds } from 'date-fns';
 import { PickOne } from 'type-fns';
 
+import { UniDate, UniDateTime } from '../../domain/UniDateTime';
+import { UniDuration, toMilliseconds } from '../../domain/UniDuration';
 import { asUniDate, isUniDate } from '../checks/isUniDate';
 import { asUniDateTime } from '../checks/isUniDateTime';
-import { UniDate, UniDateTime } from '../domain/UniDateTime';
-import { UniDuration, toMilliseconds } from '../domain/UniDuration';
 
 /**
  * subtract a duration from a datetime
