@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/ehmpathy/uni-time/compare/v1.7.0...v1.7.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* **types:** ensure UniDateTimes are not assignable within UniDateRange ([95a2376](https://github.com/ehmpathy/uni-time/commit/95a23766c401d799094fd23d6e9ec9354b8cfc1a))
+
 ## [1.7.0](https://github.com/ehmpathy/uni-time/compare/v1.6.1...v1.7.0) (2024-09-12)
 
 
