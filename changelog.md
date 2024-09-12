@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ehmpathy/uni-time/compare/v1.6.1...v1.7.0) (2024-09-12)
+
+
+### Features
+
+* **duration:** expose get duration procedure ([87b9d7b](https://github.com/ehmpathy/uni-time/commit/87b9d7bf7f5e6a8bcf0daf32cb86840b357027b2))
+
 ## [1.6.1](https://github.com/ehmpathy/uni-time/compare/v1.6.0...v1.6.1) (2024-09-01)
 
 
