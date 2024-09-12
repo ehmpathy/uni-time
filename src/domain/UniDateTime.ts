@@ -3,17 +3,17 @@ import { AsOfGlossary } from 'domain-glossaries';
 /**
  * a universally unambiguous datetime serialized as a string; yyyy-MM-ddThh:mm:ssZ
  */
-export type UniDateTime = AsOfGlossary<string, 'uni-time'>;
+export type UniDateTime = AsOfGlossary<string, 'uni-time.UniDateTime'>;
 
 /**
  * a universally unambiguous date serialized as a string; yyyy-MM-dd
  */
-export type UniDate = AsOfGlossary<string, 'uni-time'>;
+export type UniDate = AsOfGlossary<string, 'uni-time.UniDate'>;
 
 /**
  * a universally unambiguous month serialized as a string; yyyy-MM
  */
-export type UniMonth = AsOfGlossary<string, 'uni-time'>;
+export type UniMonth = AsOfGlossary<string, 'uni-time.UniMonth'>;
 
 /**
  * a universally unambiguous date range
@@ -27,7 +27,7 @@ export type UniDateRange = AsOfGlossary<
     since: UniDate;
     until: UniDate;
   },
-  'uni-time',
+  'uni-time.UniDateRange',
   false // this is not required to have the _dglo annotation, since we care about the structure.shape, and not the structure.origin
 >;
 
@@ -43,6 +43,6 @@ export type UniDateTimeRange = AsOfGlossary<
     since: UniDateTime;
     until: UniDateTime;
   },
-  'uni-time',
+  'uni-time.UniDateTimeRange',
   false // this is not required to have the _dglo annotation, since we care about the structure.shape, and not the structure.origin
 >;

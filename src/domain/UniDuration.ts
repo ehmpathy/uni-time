@@ -10,6 +10,6 @@ export type UniDuration = AsOfGlossary<
     seconds: number;
     milliseconds: number;
   }>,
-  'uni-time',
+  'uni-time.UniDuration',
   false
 >;
