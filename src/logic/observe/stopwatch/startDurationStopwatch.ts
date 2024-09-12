@@ -2,7 +2,8 @@ import { hrtime } from 'process';
 import type { LogLevel } from 'simple-leveled-log-methods';
 import type { VisualogicContext } from 'visualogic';
 
-import { UniDuration, toMilliseconds } from '../../../domain/UniDuration';
+import { UniDuration } from '../../../domain/UniDuration';
+import { toMilliseconds } from '../../manipulate/toMilliseconds';
 
 const roundToHundredths = (num: number) => Math.round(num * 100) / 100; // https://stackoverflow.com/a/14968691/3068233
 
