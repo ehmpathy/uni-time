@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/ehmpathy/uni-time/compare/v1.7.2...v1.7.3) (2024-11-21)
+
+
+### Bug Fixes
+
+* **pkg:** ensure isUniMonth utils are exported ([f9b12bf](https://github.com/ehmpathy/uni-time/commit/f9b12bf1e97e2dd1565878515a1ec6ad26df812a))
+
 ## [1.7.2](https://github.com/ehmpathy/uni-time/compare/v1.7.1...v1.7.2) (2024-11-21)
 
 
