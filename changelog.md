@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/ehmpathy/uni-time/compare/v1.7.1...v1.7.2) (2024-11-21)
+
+
+### Bug Fixes
+
+* **checks:** add checks for UniMonth ([6f061bc](https://github.com/ehmpathy/uni-time/commit/6f061bc5c5f8d7801518281e0642ac6cbe5aacaa))
+
 ## [1.7.1](https://github.com/ehmpathy/uni-time/compare/v1.7.0...v1.7.1) (2024-09-12)
 
 
