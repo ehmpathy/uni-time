@@ -1,4 +1,4 @@
-import { parseISO, subMilliseconds } from 'date-fns';
+import { addMilliseconds, parseISO } from 'date-fns';
 import { PickOne } from 'type-fns';
 
 import { UniDate, UniDateTime } from '../../domain/UniDateTime';
@@ -7,16 +7,22 @@ import { asUniDate, isUniDate } from '../checks/isUniDate';
 import { asUniDateTime } from '../checks/isUniDateTime';
 import { toMilliseconds } from './toMilliseconds';
 
+export function addDuration(...args: [UniDateTime, UniDuration]): UniDateTime;
+export function addDuration(
+  ...args: [UniDate, PickOne<Pick<Required<UniDuration>, 'days'>>]
+): UniDate;
+
 /**
- * subtract a duration from a datetime
+ * add a duration to a datetime
  */
-export const subDuration = (
+export function addDuration(
   ...args:
     | [UniDateTime, UniDuration]
     | [UniDate, PickOne<Pick<Required<UniDuration>, 'days'>>]
-) =>
-  isUniDate(args[0])
-    ? asUniDate(subMilliseconds(parseISO(args[0]), toMilliseconds(args[1])))
+): UniDate | UniDateTime {
+  return isUniDate(args[0])
+    ? asUniDate(addMilliseconds(parseISO(args[0]), toMilliseconds(args[1])))
     : asUniDateTime(
-        subMilliseconds(parseISO(args[0]), toMilliseconds(args[1])),
+        addMilliseconds(parseISO(args[0]), toMilliseconds(args[1])),
       );
+}
