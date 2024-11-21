@@ -1,7 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import { withAssure } from 'type-fns';
 
-import { UniDate } from '../../domain/UniDateTime';
+import { UniMonth } from '../../domain/UniDateTime';
 import { castInputToDate } from '../casts/castInputToDate';
 
 /**
@@ -9,12 +9,12 @@ import { castInputToDate } from '../casts/castInputToDate';
  */
 export const asUniMonth = (
   input: Parameters<typeof castInputToDate>[0],
-): UniDate => format(castInputToDate(input), 'yyyy-MM') as UniDate;
+): UniMonth => format(castInputToDate(input), 'yyyy-MM') as UniMonth;
 
 /**
  * checks whether a string literal input is a UniDate
  */
-export const isUniMonth = withAssure((input: string): input is UniDate => {
+export const isUniMonth = withAssure((input: string): input is UniMonth => {
   try {
     return asUniMonth(parseISO(input)) === input;
   } catch {
