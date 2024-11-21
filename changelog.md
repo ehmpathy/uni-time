@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/ehmpathy/uni-time/compare/v1.7.3...v1.7.4) (2024-11-21)
+
+
+### Bug Fixes
+
+* **duration:** add type overrides to distinguish grain in manipulators ([40499e1](https://github.com/ehmpathy/uni-time/commit/40499e1891fb12d834ce99798375fa568fdce146))
+
 ## [1.7.3](https://github.com/ehmpathy/uni-time/compare/v1.7.2...v1.7.3) (2024-11-21)
 
 
