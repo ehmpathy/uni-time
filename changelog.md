@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/ehmpathy/uni-time/compare/v1.8.0...v1.8.1) (2025-07-05)
+
+
+### Bug Fixes
+
+* **pkg:** revert to org scoped pkg name ([72e0492](https://github.com/ehmpathy/uni-time/commit/72e0492b17168964d43808e0dede77246380e642))
+
 ## [1.8.0](https://github.com/ehmpathy/uni-time/compare/v1.7.4...v1.8.0) (2025-07-05)
 
 
