@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/ehmpathy/uni-time/compare/v1.7.4...v1.8.0) (2025-07-05)
+
+
+### Features
+
+* **checks:** expose isUniDateTimeRange ([2c26eeb](https://github.com/ehmpathy/uni-time/commit/2c26eeb89174f54daebe62cb9ecc61abf45129e7))
+
+
+### Bug Fixes
+
+* **practs:** bump to latest best ([9394a31](https://github.com/ehmpathy/uni-time/commit/9394a31a87cda73998c6adb5e306b0c6d68c966a))
+
 ## [1.7.4](https://github.com/ehmpathy/uni-time/compare/v1.7.3...v1.7.4) (2024-11-21)
 
 
