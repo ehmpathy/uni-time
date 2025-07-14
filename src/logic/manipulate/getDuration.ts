@@ -39,7 +39,7 @@ export const getDuration = (input: {
     });
 
   // handle milliseconds
-  if (input.of.milliseconds) {
+  if (input.of.milliseconds !== undefined) {
     // if asked to define in a specific unit, define it in that unit
     if (input.as) {
       if (input.as === 'weeks')
@@ -84,9 +84,19 @@ export const getDuration = (input: {
       seconds,
       milliseconds,
     };
+    const hasZeroDuration =
+      milliseconds === 0 &&
+      weeks === 0 &&
+      days === 0 &&
+      hours === 0 &&
+      minutes === 0 &&
+      seconds === 0;
     const duration = Object.fromEntries(
       Object.entries(durationWithRedundantZeros).filter(
-        ([key, val]) => val > 0,
+        ([key, val]) =>
+          val > 0 ||
+          // base case, has zero duration
+          (key === 'milliseconds' && hasZeroDuration),
       ),
     ) as any as UniDuration;
     return duration;

@@ -16,6 +16,12 @@ describe('getDuration', () => {
         expect(duration).toEqual({ milliseconds: 69 });
       });
     });
+    when('is 0', () => {
+      then('it should accurately define the duration', () => {
+        const duration = getDuration({ of: { milliseconds: 0 } });
+        expect(duration).toEqual({ milliseconds: 0 });
+      });
+    });
     when('less than a minute', () => {
       then('it should accurately define the duration', () => {
         const duration = getDuration({ of: { milliseconds: 1069 } });
