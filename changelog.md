@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/ehmpathy/uni-time/compare/v1.8.1...v1.8.2) (2025-07-14)
+
+
+### Bug Fixes
+
+* **duration:** ensure duration of milliseconds 0 is supported ([0fac0c6](https://github.com/ehmpathy/uni-time/commit/0fac0c6de1ad2361db8f4a265ef171260bb833af))
+
 ## [1.8.1](https://github.com/ehmpathy/uni-time/compare/v1.8.0...v1.8.1) (2025-07-05)
 
 
