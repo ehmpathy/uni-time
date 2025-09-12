@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/ehmpathy/uni-time/compare/v1.8.2...v1.9.0) (2025-09-12)
+
+
+### Features
+
+* **duration:** asDurationInWords ([8d6048e](https://github.com/ehmpathy/uni-time/commit/8d6048e0f4081691f9831945062d72c517d01fa5))
+
 ## [1.8.2](https://github.com/ehmpathy/uni-time/compare/v1.8.1...v1.8.2) (2025-07-14)
 
 
