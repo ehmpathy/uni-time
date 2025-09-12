@@ -10,5 +10,6 @@ export * from './logic/manipulate/addDuration';
 export * from './logic/manipulate/getDuration';
 export * from './logic/manipulate/subDuration';
 export * from './logic/manipulate/toMilliseconds';
+export * from './logic/manipulate/asDurationInWords';
 export * from './logic/wrappers/waitFor';
 export * from './logic/observe/stopwatch/startDurationStopwatch';
