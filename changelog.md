@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/ehmpathy/uni-time/compare/v1.9.0...v1.9.1) (2025-09-20)
+
+
+### Bug Fixes
+
+* **shapes:** ensure date time satisfies date, since its a superset of info ([23e3725](https://github.com/ehmpathy/uni-time/commit/23e372599c5e3c8c35accf239835c61b13eafbc6))
+* **tests:** add more test coverage to asUniDateTime ([5465481](https://github.com/ehmpathy/uni-time/commit/5465481c06e5ef54f1c65b3418e219d4e998e9b5))
+
 ## [1.9.0](https://github.com/ehmpathy/uni-time/compare/v1.8.2...v1.9.0) (2025-09-12)
 
 
