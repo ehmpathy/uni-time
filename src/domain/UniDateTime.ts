@@ -19,6 +19,11 @@ export type UniDate = AsOfGlossary<
 export type UniMonth = AsOfGlossary<string, 'uni-time.UniMonth'>;
 
 /**
+ * a dateless wallclock time
+ */
+export type UniTime = AsOfGlossary<string, 'uni-time.UniTime'>;
+
+/**
  * a universally unambiguous date range
  *
  * note
