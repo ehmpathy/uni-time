@@ -1,7 +1,18 @@
 import { withAssure } from 'type-fns';
 
 import { UniDateTimeRange } from '../../domain/UniDateTime';
-import { isUniDateTime } from './isUniDateTime';
+import { isUniDateTime, asUniDateTime } from './isUniDateTime';
+
+/**
+ * casts a range like input into a UniDateTimeRange
+ */
+export const asUniDateTimeRange = (input: {
+  since: Parameters<typeof asUniDateTime>[0];
+  until: Parameters<typeof asUniDateTime>[0];
+}): UniDateTimeRange => ({
+  since: asUniDateTime(input.since),
+  until: asUniDateTime(input.until),
+});
 
 /**
  * checks whether an input is a valid UniDateTimeRange

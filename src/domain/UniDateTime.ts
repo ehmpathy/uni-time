@@ -8,7 +8,10 @@ export type UniDateTime = AsOfGlossary<string, 'uni-time.UniDateTime'>;
 /**
  * a universally unambiguous date serialized as a string; yyyy-MM-dd
  */
-export type UniDate = AsOfGlossary<string, 'uni-time.UniDate'>;
+export type UniDate = AsOfGlossary<
+  string,
+  'uni-time.UniDate' | 'uni-time.UniDateTime' // date-time is a superset of date
+>;
 
 /**
  * a universally unambiguous month serialized as a string; yyyy-MM
@@ -27,7 +30,7 @@ export type UniDateRange = AsOfGlossary<
     since: UniDate;
     until: UniDate;
   },
-  'uni-time.UniDateRange',
+  'uni-time.UniDateRange' | 'uni-time.UniDateTimeRange', // date-time is a superset of date
   false // this is not required to have the _dglo annotation, since we care about the structure.shape, and not the structure.origin
 >;
 
