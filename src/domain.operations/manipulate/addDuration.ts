@@ -1,4 +1,5 @@
-import { addMilliseconds, parseISO } from 'date-fns';
+import { addMilliseconds } from 'date-fns/addMilliseconds';
+import { parseISO } from 'date-fns/parseISO';
 import type { PickOne } from 'type-fns';
 
 import type { UniDate, UniDateTime } from '@src/domain.objects/UniDateTime';
