@@ -1,4 +1,4 @@
-import { parseISO } from 'date-fns';
+import { parseISO } from 'date-fns/parseISO';
 import { withAssure } from 'type-fns';
 
 import type { UniDateTime } from '@src/domain.objects/UniDateTime';
