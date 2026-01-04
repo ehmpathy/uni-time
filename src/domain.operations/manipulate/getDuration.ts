@@ -1,26 +1,34 @@
 import { UnexpectedCodePathError } from 'helpful-errors';
 import type { PickOne } from 'type-fns';
 
-import type { UniDateTimeRange } from '@src/domain.objects/UniDateTime';
-import type { UniDuration } from '@src/domain.objects/UniDuration';
+import type { IsoDuration } from '@src/domain.objects/IsoDuration';
+import type {
+  IsoDateStampRange,
+  IsoTimeStampRange,
+} from '@src/domain.objects/IsoTimeStampRange';
 import { toMse } from '@src/domain.operations/casts/toMillisecondsSinceEpoch';
-
 import {
   MILLISECONDS_PER_DAY,
   MILLISECONDS_PER_HOUR,
   MILLISECONDS_PER_MINUTE,
+  MILLISECONDS_PER_MONTH,
   MILLISECONDS_PER_SECOND,
   MILLISECONDS_PER_WEEK,
-} from './toMilliseconds';
+  MILLISECONDS_PER_YEAR,
+} from '@src/domain.operations/manipulate/toMilliseconds';
 
 /**
  * .what = calculates the duration of a time range
+ * .why = enables computing elapsed time between two stamps
  */
 export const getDuration = (input: {
   /**
    * what measure of time to extract a duration from
    */
-  of: PickOne<{ range: UniDateTimeRange; milliseconds: number }>;
+  of: PickOne<{
+    range: IsoTimeStampRange | IsoDateStampRange;
+    milliseconds: number;
+  }>;
 
   /**
    * the unit to define the duration in, if desired
@@ -28,8 +36,8 @@ export const getDuration = (input: {
    * note
    * - by default, it will define it via all of them
    */
-  as?: keyof UniDuration;
-}): UniDuration => {
+  as?: keyof IsoDuration;
+}): IsoDuration => {
   // handle range inputs
   if (input.of.range)
     return getDuration({
@@ -43,6 +51,10 @@ export const getDuration = (input: {
   if (input.of.milliseconds !== undefined) {
     // if asked to define in a specific unit, define it in that unit
     if (input.as) {
+      if (input.as === 'years')
+        return { years: input.of.milliseconds / MILLISECONDS_PER_YEAR };
+      if (input.as === 'months')
+        return { months: input.of.milliseconds / MILLISECONDS_PER_MONTH };
       if (input.as === 'weeks')
         return { weeks: input.of.milliseconds / MILLISECONDS_PER_WEEK };
       if (input.as === 'days')
@@ -77,14 +89,6 @@ export const getDuration = (input: {
         MILLISECONDS_PER_SECOND,
     );
     const milliseconds = input.of.milliseconds % MILLISECONDS_PER_SECOND;
-    const durationWithRedundantZeros = {
-      weeks,
-      days,
-      hours,
-      minutes,
-      seconds,
-      milliseconds,
-    };
     const hasZeroDuration =
       milliseconds === 0 &&
       weeks === 0 &&
@@ -92,14 +96,16 @@ export const getDuration = (input: {
       hours === 0 &&
       minutes === 0 &&
       seconds === 0;
-    const duration = Object.fromEntries(
-      Object.entries(durationWithRedundantZeros).filter(
-        ([key, val]) =>
-          val > 0 ||
-          // base case, has zero duration
-          (key === 'milliseconds' && hasZeroDuration),
-      ),
-    ) as any as UniDuration;
+
+    // build duration object with only non-zero values
+    const duration: IsoDuration = {
+      ...(weeks > 0 && { weeks }),
+      ...(days > 0 && { days }),
+      ...(hours > 0 && { hours }),
+      ...(minutes > 0 && { minutes }),
+      ...(seconds > 0 && { seconds }),
+      ...((milliseconds > 0 || hasZeroDuration) && { milliseconds }),
+    } as IsoDuration;
     return duration;
   }
 

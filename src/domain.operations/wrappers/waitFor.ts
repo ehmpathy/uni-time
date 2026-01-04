@@ -1,12 +1,12 @@
 import { HelpfulError } from 'helpful-errors';
 import { isNotUndefined, type NotUndefined } from 'type-fns';
 
-import type { UniDuration } from '@src/domain.objects/UniDuration';
+import type { IsoDuration } from '@src/domain.objects/IsoDuration';
 import { toMilliseconds } from '@src/domain.operations/manipulate/toMilliseconds';
 import { sleep } from '@src/domain.operations/utils/sleep';
 
-const DEFAULT_TIMEOUT: UniDuration = { seconds: 60 };
-const DEFAULT_INTERVAL: UniDuration = { seconds: 10 };
+const DEFAULT_TIMEOUT: IsoDuration = { seconds: 60 };
+const DEFAULT_INTERVAL: IsoDuration = { seconds: 10 };
 
 export class WaitForTimedOutError extends HelpfulError {}
 
@@ -34,12 +34,12 @@ export const waitFor = async <O>(
     /**
      * the interval at which to check for completion
      */
-    interval?: UniDuration;
+    interval?: IsoDuration;
 
     /**
      * the maximum duration to wait for, until timeout
      */
-    timeout?: UniDuration;
+    timeout?: IsoDuration;
   },
 ): Promise<NotUndefined<O>> => {
   // define the timeout and interval

@@ -1,6 +1,8 @@
-import type { UniDuration } from '@src/domain.objects/UniDuration';
+import type { IsoDuration } from '@src/domain.objects/IsoDuration';
 
 const DURATION_ORDER = [
+  'years',
+  'months',
   'weeks',
   'days',
   'hours',
@@ -12,6 +14,8 @@ const DURATION_ORDER = [
 type Unit = (typeof DURATION_ORDER)[number];
 
 const SHORT_LABELS: Record<Unit, string> = {
+  years: 'y',
+  months: 'mo',
   weeks: 'w',
   days: 'd',
   hours: 'h',
@@ -21,16 +25,16 @@ const SHORT_LABELS: Record<Unit, string> = {
 };
 
 /**
- * .what = stringify a UniDuration into short human words
+ * .what = stringify an IsoDuration into short human words
  * .why  = minimum-surface-area: one obvious input, safe defaults
  * .how  =
- *   - order: weeks → ms
+ *   - order: years → ms
  *   - skip zeros
  *   - max 2 nonzero units
  *   - compact labels (e.g. 2h 5m)
  *   - fallback "0s" when all zero
  */
-export const asDurationInWords = (duration: UniDuration): string => {
+export const asDurationInWords = (duration: IsoDuration): string => {
   const norm: Record<Unit, number> = Object.fromEntries(
     DURATION_ORDER.map((u) => {
       const n = Number((duration as any)?.[u] ?? 0);

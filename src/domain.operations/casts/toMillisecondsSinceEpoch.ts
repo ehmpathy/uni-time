@@ -1,7 +1,14 @@
-import type { UniDate, UniDateTime } from '@src/domain.objects/UniDateTime';
+import type {
+  IsoDateStamp,
+  IsoTimeStamp,
+} from '@src/domain.objects/IsoTimeStamp';
 
+/**
+ * .what = converts stamp to milliseconds since epoch
+ * .why = enables comparison and arithmetic with raw millisecond values
+ */
 export const toMillisecondsSinceEpoch = (
-  input: UniDate | UniDateTime,
+  input: IsoTimeStamp | IsoDateStamp,
 ): number => new Date(input).getTime();
 
 export { toMillisecondsSinceEpoch as toMse };
