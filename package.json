@@ -1,19 +1,21 @@
 {
-  "name": "@ehmpathy/uni-time",
+  "name": "iso-time",
   "author": "ehmpathy",
-  "description": "a glossary of universally intuitive time, date, and duration domain literals",
+  "description": "strict ISO 8601 timestamps, date stamps, and durations with runtime validation",
   "version": "1.10.0",
-  "repository": "ehmpathy/uni-time",
-  "homepage": "https://github.com/ehmpathy/uni-time",
+  "repository": "ehmpathy/iso-time",
+  "homepage": "https://github.com/ehmpathy/iso-time",
   "keywords": [
+    "iso8601",
     "time",
     "date",
-    "datetime",
-    "UniDate",
-    "UniDateTime",
-    "UniDuration"
+    "timestamp",
+    "duration",
+    "IsoTimeStamp",
+    "IsoDateStamp",
+    "IsoDuration"
   ],
-  "bugs": "https://github.com/ehmpathy/uni-time/issues",
+  "bugs": "https://github.com/ehmpathy/iso-time/issues",
   "license": "MIT",
   "main": "dist/index.js",
   "engines": {
