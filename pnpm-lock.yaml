@@ -14,15 +14,9 @@ importers:
       domain-glossaries:
         specifier: 1.0.0
         version: 1.0.0
-      domain-objects:
-        specifier: 0.31.9
-        version: 0.31.9
       helpful-errors:
         specifier: 1.5.3
         version: 1.5.3
-      test-fns:
-        specifier: 1.5.0
-        version: 1.5.0
       type-fns:
         specifier: 1.21.0
         version: 1.21.0
@@ -72,6 +66,9 @@ importers:
       depcheck:
         specifier: 1.4.3
         version: 1.4.3
+      domain-objects:
+        specifier: 0.31.9
+        version: 0.31.9
       esbuild-register:
         specifier: 3.6.0
         version: 3.6.0(esbuild@0.25.12)
@@ -96,6 +93,9 @@ importers:
       simple-leveled-log-methods:
         specifier: 0.4.1
         version: 0.4.1
+      test-fns:
+        specifier: 1.4.2
+        version: 1.4.2
       tsc-alias:
         specifier: 1.8.10
         version: 1.8.10
