@@ -2,13 +2,13 @@ import { hrtime } from 'process';
 import type { LogLevel } from 'simple-leveled-log-methods';
 import type { VisualogicContext } from 'visualogic';
 
-import type { UniDuration } from '@src/domain.objects/UniDuration';
+import type { IsoDuration } from '@src/domain.objects/IsoDuration';
 import { toMilliseconds } from '@src/domain.operations/manipulate/toMilliseconds';
 
 const roundToHundredths = (num: number) => Math.round(num * 100) / 100; // https://stackoverflow.com/a/14968691/3068233
 
 interface StopOptions {
-  log?: boolean | { threshold?: UniDuration; level?: LogLevel };
+  log?: boolean | { threshold?: IsoDuration; level?: LogLevel };
 }
 
 /**
