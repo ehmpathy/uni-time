@@ -1,5 +1,5 @@
 import { hrtime } from 'process';
-import type { LogLevel } from 'simple-leveled-log-methods';
+import type { LogLevel } from 'simple-log-methods';
 import type { VisualogicContext } from 'visualogic';
 
 import type { IsoDuration } from '@src/domain.objects/IsoDuration';
