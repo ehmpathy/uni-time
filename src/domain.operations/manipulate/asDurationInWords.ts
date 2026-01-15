@@ -1,4 +1,5 @@
 import type { IsoDuration } from '@src/domain.objects/IsoDuration';
+import { asIsoDurationShape } from '@src/domain.operations/normalize/asIsoDurationShape';
 
 const DURATION_ORDER = [
   'years',
@@ -35,9 +36,12 @@ const SHORT_LABELS: Record<Unit, string> = {
  *   - fallback "0s" when all zero
  */
 export const asDurationInWords = (duration: IsoDuration): string => {
+  // normalize to object shape (handles both string and object formats)
+  const shape = asIsoDurationShape(duration);
+
   const norm: Record<Unit, number> = Object.fromEntries(
     DURATION_ORDER.map((u) => {
-      const n = Number((duration as any)?.[u] ?? 0);
+      const n = Number(shape[u] ?? 0);
       return [u, Number.isFinite(n) ? Math.max(0, n) : 0];
     }),
   ) as Record<Unit, number>;

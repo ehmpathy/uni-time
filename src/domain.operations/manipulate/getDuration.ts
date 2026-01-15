@@ -1,7 +1,7 @@
 import { UnexpectedCodePathError } from 'helpful-errors';
 import type { PickOne } from 'type-fns';
 
-import type { IsoDuration } from '@src/domain.objects/IsoDuration';
+import type { IsoDurationShape } from '@src/domain.objects/IsoDurationShape';
 import type {
   IsoDateStampRange,
   IsoTimeStampRange,
@@ -36,8 +36,8 @@ export const getDuration = (input: {
    * note
    * - by default, it will define it via all of them
    */
-  as?: keyof IsoDuration;
-}): IsoDuration => {
+  as?: keyof IsoDurationShape;
+}): IsoDurationShape => {
   // handle range inputs
   if (input.of.range)
     return getDuration({
@@ -98,14 +98,14 @@ export const getDuration = (input: {
       seconds === 0;
 
     // build duration object with only non-zero values
-    const duration: IsoDuration = {
+    const duration: IsoDurationShape = {
       ...(weeks > 0 && { weeks }),
       ...(days > 0 && { days }),
       ...(hours > 0 && { hours }),
       ...(minutes > 0 && { minutes }),
       ...(seconds > 0 && { seconds }),
       ...((milliseconds > 0 || hasZeroDuration) && { milliseconds }),
-    } as IsoDuration;
+    } as IsoDurationShape;
     return duration;
   }
 

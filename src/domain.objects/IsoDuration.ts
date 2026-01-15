@@ -1,22 +1,17 @@
 import type { AsOfGlossary } from 'domain-glossaries';
-import type { PickAny } from 'type-fns';
+
+import type { IsoDurationShape } from './IsoDurationShape';
+import type { IsoDurationWords } from './IsoDurationWords';
 
 /**
- * .what = duration between two instants
- * .why = represent time spans for arithmetic
- * .note = all fields optional via PickAny; supports years and months
+ * .what = duration in either string or object format
+ * .why = enables users to choose most convenient format per context
  */
 export type IsoDuration = AsOfGlossary<
-  PickAny<{
-    years: number;
-    months: number;
-    weeks: number;
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-    milliseconds: number;
-  }>,
+  IsoDurationWords | IsoDurationShape,
   'iso-time.IsoDuration',
   false
 >;
+
+// re-export constituent types
+export type { IsoDurationWords, IsoDurationShape };

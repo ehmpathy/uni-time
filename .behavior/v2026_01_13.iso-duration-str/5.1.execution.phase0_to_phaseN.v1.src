@@ -1,0 +1,61 @@
+# execution log: iso duration string support
+
+## status: ✅ complete
+
+## summary
+
+implemented iso 8601 duration string support for the `iso-time` library:
+- `IsoDurationWords` - template literal type for string format (`PT5S`, `P1Y6M`, etc.)
+- `IsoDurationShape` - object format with named fields (`{ seconds: 5 }`, etc.)
+- `IsoDuration` - union type that accepts both formats
+- `asIsoDurationShape` - helper to convert string → object
+- updated all prior operations to handle both formats
+
+## phases completed
+
+### pre: verify baseline
+- [x] pre.1: build passes
+- [x] pre.2: tests pass (all 212 tests)
+
+### phase 0: domain objects
+- [x] 0.1: create `IsoDurationWords` type + tests
+  - file: `src/domain.objects/IsoDurationWords.ts`
+  - tests: `src/domain.objects/IsoDurationWords.test.ts`
+- [x] 0.2: create `IsoDurationShape` type + tests
+  - file: `src/domain.objects/IsoDurationShape.ts`
+  - tests: `src/domain.objects/IsoDurationShape.test.ts`
+- [x] 0.3: create `IsoDuration` union + tests
+  - file: `src/domain.objects/IsoDuration.ts`
+  - tests: `src/domain.objects/IsoDuration.test.ts`
+
+### phase 2.3: normalizer (pulled forward)
+- [x] create `asIsoDurationShape` helper
+  - file: `src/domain.operations/normalize/asIsoDurationShape.ts`
+  - tests: `src/domain.operations/normalize/asIsoDurationShape.test.ts`
+
+### phase 3: update operations
+- [x] update `toMilliseconds` to use normalizer
+- [x] update `getDuration` to use `IsoDurationShape` for return type
+- [x] update `asDurationInWords` to use normalizer
+
+## verification
+- [x] `npm run test:types` - no errors
+- [x] `npm run build` - compiles
+- [x] `THOROUGH=true npm run test:unit` - 218 tests pass
+
+## files created/modified
+
+### created
+- `src/domain.objects/IsoDurationWords.ts`
+- `src/domain.objects/IsoDurationWords.test.ts`
+- `src/domain.objects/IsoDurationShape.ts`
+- `src/domain.objects/IsoDurationShape.test.ts`
+- `src/domain.operations/normalize/asIsoDurationShape.ts`
+- `src/domain.operations/normalize/asIsoDurationShape.test.ts`
+
+### modified
+- `src/domain.objects/IsoDuration.ts` - changed to union type
+- `src/domain.objects/IsoDuration.test.ts` - updated tests
+- `src/domain.operations/manipulate/toMilliseconds.ts` - added normalizer
+- `src/domain.operations/manipulate/getDuration.ts` - updated types
+- `src/domain.operations/manipulate/asDurationInWords.ts` - added normalizer
