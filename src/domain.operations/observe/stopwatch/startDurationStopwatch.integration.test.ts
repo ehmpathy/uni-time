@@ -1,4 +1,4 @@
-import type { LogLevel } from 'simple-leveled-log-methods';
+import type { LogLevel } from 'simple-log-methods';
 import { given, then, when } from 'test-fns';
 
 import { startDurationStopwatch } from '@src/domain.operations/observe/stopwatch/startDurationStopwatch';
