@@ -174,6 +174,33 @@ describe('iso-time acceptance', () => {
   });
 
   given('duration operations', () => {
+    when('assigning duration literals', () => {
+      then('should accept string literals without casts', () => {
+        // users should be able to write IsoDuration string literals directly
+        const good1: IsoDuration = 'PT30S';
+        const good2: IsoDuration = 'PT1H30M';
+        const good3: IsoDuration = 'P1D';
+        const good4: IsoDuration = 'P1DT12H';
+
+        // verify they're valid at runtime too
+        expect(toMilliseconds(good1)).toEqual(30 * 1000);
+        expect(toMilliseconds(good2)).toEqual(90 * 60 * 1000);
+        expect(toMilliseconds(good3)).toEqual(24 * 60 * 60 * 1000);
+        expect(toMilliseconds(good4)).toEqual(36 * 60 * 60 * 1000);
+      });
+
+      then('should accept object literals without casts', () => {
+        // users should be able to write IsoDuration object literals directly
+        const good1: IsoDuration = { seconds: 30 };
+        const good2: IsoDuration = { hours: 1, minutes: 30 };
+        const good3: IsoDuration = { days: 1 };
+
+        expect(toMilliseconds(good1)).toEqual(30 * 1000);
+        expect(toMilliseconds(good2)).toEqual(90 * 60 * 1000);
+        expect(toMilliseconds(good3)).toEqual(24 * 60 * 60 * 1000);
+      });
+    });
+
     when('adding duration to a stamp', () => {
       then('should return correct result', () => {
         const start = asIsoTimeStamp('2024-06-15T10:00:00Z');

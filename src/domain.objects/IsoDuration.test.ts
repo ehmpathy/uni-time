@@ -5,6 +5,29 @@ import type {
 } from './IsoDuration';
 
 describe('IsoDuration type', () => {
+  describe('positive cases - string literals work without casts', () => {
+    it('should accept string literals directly without type casts', () => {
+      // users should be able to write IsoDuration string literals directly
+      // this is a critical API contract: no `as IsoDuration` casts required
+      const good1: IsoDuration = 'PT30S';
+      const good2: IsoDuration = 'PT1H30M';
+      const good3: IsoDuration = 'P1D';
+      const good4: IsoDuration = 'P1DT12H';
+
+      expect([good1, good2, good3, good4]).toBeDefined();
+    });
+
+    it('should accept object literals directly without type casts', () => {
+      // users should be able to write IsoDuration object literals directly
+      // this is a critical API contract: no `as IsoDuration` casts required
+      const good1: IsoDuration = { seconds: 30 };
+      const good2: IsoDuration = { hours: 1, minutes: 30 };
+      const good3: IsoDuration = { days: 1 };
+
+      expect([good1, good2, good3]).toBeDefined();
+    });
+  });
+
   describe('positive cases - valid string format (IsoDurationWords)', () => {
     it('should accept valid time-only string patterns', () => {
       const a: IsoDuration = 'PT5S';
