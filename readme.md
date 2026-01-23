@@ -193,6 +193,25 @@ const elapsed = getDuration({
 }); // { hours: 2, minutes: 30 }
 ```
 
+### sum durations
+
+```ts
+import { sumDurations } from 'iso-time';
+
+// spread syntax
+const total = sumDurations({ hours: 1 }, { minutes: 30 }, { seconds: 45 });
+// { hours: 1, minutes: 30, seconds: 45 }
+
+// array syntax
+const durations = [{ hours: 2 }, 'PT30M', { minutes: 15 }];
+const combined = sumDurations(durations);
+// { hours: 2, minutes: 45 }
+
+// get sum in a specific unit
+const totalMinutes = sumDurations(durations, { as: 'minutes' });
+// { minutes: 165 }
+```
+
 ### sleep
 
 ```ts

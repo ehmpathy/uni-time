@@ -25,6 +25,7 @@ export * from './domain.operations/manipulate/addDuration';
 export * from './domain.operations/manipulate/asDurationInWords';
 export * from './domain.operations/manipulate/getDuration';
 export * from './domain.operations/manipulate/subDuration';
+export * from './domain.operations/manipulate/sumDurations';
 export * from './domain.operations/manipulate/toMilliseconds';
 // observe
 export * from './domain.operations/observe/now';
